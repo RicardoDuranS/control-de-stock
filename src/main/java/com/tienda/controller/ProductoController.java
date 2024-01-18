@@ -1,7 +1,6 @@
 package com.tienda.controller;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -11,6 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 import javax.naming.spi.DirStateFactory.Result;
+
+import com.tienda.factory.ConectionFactory;
 
 public class ProductoController {
 
@@ -23,10 +24,7 @@ public class ProductoController {
 	}
 
 	public List<Map<String, String>> listar() throws SQLException {
-		Connection con = DriverManager.getConnection(
-				"jdbc:mysql://localhost/control_de_stock",
-				"root",
-				"12345678");
+		Connection con = new ConectionFactory().recuperarConnexion();
 
 		Statement statement = con.createStatement();
 		statement.execute("SELECT ID, NOMBRE, DESCRIPCION, CANTIDAD FROM PRODUCTO");

@@ -1,16 +1,13 @@
 package com.tienda.tests;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+
+import com.tienda.factory.ConectionFactory;
 
 public class PruebaConexion {
     public static void main(String[] args) throws SQLException {
-        Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost/control_de_stock?useTimeZone=true&serverTimeZone=UTC",
-                "root",
-                "12345678");
-
+        Connection con = new ConectionFactory().recuperarConnexion();
         con.close();
     }
 }
