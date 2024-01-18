@@ -2,7 +2,7 @@ package com.tienda.jdbc;
 
 import javax.swing.JFrame;
 
-import com.tienda.jdbc.view.ControlDeStockFrame;
+import com.tienda.view.ControlDeStockFrame;
 
 public class ControlDeStockMain {
 

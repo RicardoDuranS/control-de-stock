@@ -1,4 +1,4 @@
-package com.tienda.jdbc.view;
+package com.tienda.view;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -16,8 +16,8 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import com.tienda.jdbc.controller.CategoriaController;
-import com.tienda.jdbc.controller.ProductoController;
+import com.tienda.controller.CategoriaController;
+import com.tienda.controller.ProductoController;
 
 public class ControlDeStockFrame extends JFrame {
 

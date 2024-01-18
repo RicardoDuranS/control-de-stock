@@ -1,4 +1,4 @@
-package com.tienda.jdbc.tests;
+package com.tienda.tests;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

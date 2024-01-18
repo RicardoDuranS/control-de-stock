@@ -1,4 +1,4 @@
-package com.tienda.jdbc.view;
+package com.tienda.view;
 
 import java.awt.Container;
 
@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import com.tienda.jdbc.controller.CategoriaController;
+import com.tienda.controller.CategoriaController;
 
 public class ReporteFrame extends JFrame {
 

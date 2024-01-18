@@ -1,4 +1,4 @@
-package com.tienda.jdbc.controller;
+package com.tienda.controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
