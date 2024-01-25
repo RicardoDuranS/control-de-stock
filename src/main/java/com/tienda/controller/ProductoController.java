@@ -15,8 +15,16 @@ import com.tienda.factory.ConectionFactory;
 
 public class ProductoController {
 
-	public void modificar(String nombre, String descripcion, Integer id) {
-		// TODO
+	public void modificar(String nombre, String descripcion, Integer id, Integer cantidad) throws SQLException {
+		Connection con = new ConectionFactory().recuperarConexion();
+
+		Statement statement = con.createStatement();
+
+		statement.execute("UPDATE PRODUCTO SET "
+				+ " NOMBRE = '" + nombre + "'"
+				+ ", DESCRIPCION = '" + descripcion + "'"
+				+ ", CANTIDAD = '" + cantidad + "'"
+				+ " WHERE ID = " + id);
 	}
 
 	public int eliminar(Integer id) throws SQLException {
