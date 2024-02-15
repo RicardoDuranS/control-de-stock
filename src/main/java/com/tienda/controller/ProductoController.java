@@ -86,6 +86,7 @@ public class ProductoController {
 		Integer maximoCantidad = 50;
 
 		Connection con = new ConectionFactory().recuperarConexion();
+		con.setAutoCommit(false);
 
 		PreparedStatement statement = con.prepareStatement("INSERT INTO PRODUCTO "
 				+ "(nombre, descripcion, cantidad)"
