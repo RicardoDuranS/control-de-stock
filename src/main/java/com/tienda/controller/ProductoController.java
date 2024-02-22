@@ -12,12 +12,12 @@ import java.util.Map;
 
 import javax.naming.spi.DirStateFactory.Result;
 
-import com.tienda.factory.ConectionFactory;
+import com.tienda.factory.ConnectionFactory;
 
 public class ProductoController {
 
 	public void modificar(String nombre, String descripcion, Integer id, Integer cantidad) throws SQLException {
-		final Connection con = new ConectionFactory().recuperarConexion();
+		final Connection con = new ConnectionFactory().recuperarConexion();
 		try (con) {
 			final PreparedStatement statement = con.prepareStatement("UPDATE PRODUCTO SET"
 					+ "NOMBRE = ?, "
@@ -40,7 +40,7 @@ public class ProductoController {
 	}
 
 	public int eliminar(Integer id) throws SQLException {
-		final Connection con = new ConectionFactory().recuperarConexion();
+		final Connection con = new ConnectionFactory().recuperarConexion();
 		try (con) {
 			final PreparedStatement statement = con
 					.prepareStatement("DELETE FROM PRODUCTO WHERE ID = ?");
@@ -57,7 +57,7 @@ public class ProductoController {
 	}
 
 	public List<Map<String, String>> listar() throws SQLException {
-		final Connection con = new ConectionFactory().recuperarConexion();
+		final Connection con = new ConnectionFactory().recuperarConexion();
 
 		try (con) {
 			final PreparedStatement statement = con
@@ -91,7 +91,7 @@ public class ProductoController {
 		Integer cantidad = Integer.valueOf(producto.get("CANTIDAD"));
 		Integer maximoCantidad = 50;
 
-		final Connection con = new ConectionFactory().recuperarConexion();
+		final Connection con = new ConnectionFactory().recuperarConexion();
 		con.setAutoCommit(false);
 
 		try (con) {
