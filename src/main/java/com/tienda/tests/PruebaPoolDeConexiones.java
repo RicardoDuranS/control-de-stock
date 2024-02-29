@@ -10,7 +10,7 @@ public class PruebaPoolDeConexiones {
         ConnectionFactory con = new ConnectionFactory();
 
         for (int i = 0; i < 20; i++) {
-            Connection conexion = con.recuperarConexion();
+            Connection conexion = con.recuperaConexion();
             System.out.println("Abriendo la conexion" + (i + 1));
         }
     }

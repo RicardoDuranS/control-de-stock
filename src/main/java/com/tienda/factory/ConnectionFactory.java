@@ -17,12 +17,16 @@ public class ConnectionFactory {
         pooledDataSource.setJdbcUrl("jdbc:mysql://localhost/control_de_stock");
         pooledDataSource.setUser("root");
         pooledDataSource.setPassword("12345678");
+        pooledDataSource.setMaxPoolSize(10); // Tamaño máximo del pool
         this.dataSource = pooledDataSource;
-        pooledDataSource.setMaxPoolSize(5); // Tamaño máximo del pool
 
     }
 
-    public Connection recuperarConexion() throws SQLException {
-        return this.dataSource.getConnection();
+    public Connection recuperaConexion() {
+        try {
+            return this.dataSource.getConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -7,7 +7,7 @@ import com.tienda.factory.ConnectionFactory;
 
 public class PruebaConexion {
     public static void main(String[] args) throws SQLException {
-        Connection con = new ConnectionFactory().recuperarConexion();
+        Connection con = new ConnectionFactory().recuperaConexion();
         con.close();
     }
 }
