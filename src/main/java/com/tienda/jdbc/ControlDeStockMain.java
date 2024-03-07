@@ -12,3 +12,15 @@ public class ControlDeStockMain {
 	}
 
 }
+/*
+ * Messa
+ * Celular
+ * Vaso
+ * Cuchara
+ * Mouse
+ * Linternas
+ * Botellas
+ * Teclado
+ * Pantallas
+ * Aceite de cocina
+ */
