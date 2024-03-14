@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.tienda.dao.ProductoDAO;
 import com.tienda.factory.ConnectionFactory;
+import com.tienda.modelo.Categoria;
 import com.tienda.modelo.Producto;
 
 public class ProductoController {
@@ -25,6 +26,10 @@ public class ProductoController {
 
 	public List<Producto> listar() {
 		return productoDao.listar();
+	}
+
+	public List<Producto> listar(Categoria categoria) {
+		return productoDao.listar(categoria.getId());
 	}
 
 	public void guardar(Producto producto, Integer categoriaId) {
