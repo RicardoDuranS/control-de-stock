@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.tienda.modelo.Categoria;
+import com.tienda.modelo.Producto;
 
 public class CategoriaDAO {
     private Connection con;
@@ -60,6 +61,11 @@ public class CategoriaDAO {
                                     resultado.add(cat);
                                     return cat;
                                 });
+                        Producto producto = new Producto(resultSet.getInt("P.ID"),
+                                resultSet.getString("P.NOMBRE"),
+                                resultSet.getInt("P.CANTIDAD"));
+
+                        categoria.agregar(producto);
                     }
                 }
                 ;
